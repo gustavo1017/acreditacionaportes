@@ -1,0 +1,14 @@
+.espacio-blanco-10px{
+    height: 10px;
+}
+
+.cabecera-card{
+    display: grid;
+    grid-template-columns: 98% 2%;
+    height: 42px;
+}
+
+.cabecera-card__item2{
+    justify-content: center;
+}
+
