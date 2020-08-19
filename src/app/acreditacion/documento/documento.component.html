@@ -1,15 +1,24 @@
 <app-navegacion></app-navegacion>
 
+<div class="cabecera-card">
+    <div></div>
+    <div>
+        <button (click)="mostrarDatosSolicitud()" class="boton-datos-solicitud btn btn-primary" type="button" data-toggle="collapse" data-target="#contenedorDatosSolicitud" aria-expanded="false" aria-controls="contenedorDatosSolicitud">
+            <i  class="tamanio-flecha fas {{iconoFlechaMostrarDatosSolicitud}}"></i>
+        </button>
 
+    </div>
+</div>
 
 <div class="onpFila">
  <div class="onpContenedorBusqueda">
-    <div class="onpContenedorSup">
-
+     <div class="alto-datos-solicitud onpContenedorSup">
         <h4>
             <strong>Datos de Solicitud</strong>
         </h4>
-
+     </div>
+    
+    <section id="contenedorDatosSolicitud" class="collapse show onpContenedorSup">
         <div class="onpContenedorDatosSup">
                 <div [style.width]="20+'%'" class="onpDatosIzq">
                     <ul>
@@ -50,11 +59,11 @@
                     </table>
                 </div>
         </div>
-    </div>
+    </section>
 
     <div class="espacio-blanco-10px"></div>
 
-    <div class="onpContenedorSup" [style.width]="100+'%'">
+    <section class="onpContenedorSup" [style.width]="100+'%'">
 
         <div class="cabecera-card">
             <div class="cabecera-card__item1">
@@ -63,14 +72,14 @@
                 </h4>
             </div>
             <div class="cabecera-card__item2">
-                <a (click)="mostrarMotivoTramite()" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-                    <i style="color: #17448e;" class="{{iconoFlechaMostrarMotivoTramite}}"></i>
+                <a (click)="mostrarMotivoTramite()" data-toggle="collapse" href="#contenedorMotivoTramite" role="button" aria-expanded="true" aria-controls="contenedorMotivoTramite">
+                    <i class="tamanio-flecha color-flecha {{iconoFlechaMostrarMotivoTramite}}"></i>
                 </a>
             </div>
 
         </div>
 
-        <div class="collapse" id="collapseExample">
+        <div class="collapse show" id="contenedorMotivoTramite">
             <div class="card card-body">
                 <div >
                     <div [style.width]="100+'%'">
@@ -96,8 +105,274 @@
 
             </div>
         </div>
+    </section>
 
+    <div class="espacio-blanco-10px"></div>
+    
+    <section class="onpContenedorSup" [style.width]="100+'%'">
+
+        <div class="cabecera-card">
+            <div class="cabecera-card__item1">
+                <h4 class="onpMargenSup15 onpMargenIzq20">
+                    <strong>Datos de Afiliado</strong>
+                </h4>
+            </div>
+            <div class="cabecera-card__item2">
+                <a (click)="mostrarDatosAfiliado()" data-toggle="collapse" href="#contenedorDatosAfiliado" role="button" aria-expanded="true" aria-controls="contenedorDatosAfiliado">
+                    <i class="tamanio-flecha color-flecha {{iconoFlechaMostrarDatosAfiliado}}"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="collapse show" id="contenedorDatosAfiliado">
+            <div class="card card-body">
+                <div >
+                    <div [style.width]="100+'%'">
+                        <table class="onpDatosDerTabla2" width="100%">
+                            <tbody>
+                                <tr width="100%">
+                                    <th width="15%">Tipo de Documento:</th>
+                                    <td width="35%">DNI</td>
+                                    <th width="15%">Nombres y Apellidos:</th>
+                                    <td width="35%">01234567</td>
+                                </tr>
+                                <tr>
+                                    <th>Nro de documento:</th>
+                                    <td>LUIS EDUARDO SULLON CHERO</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+    <div class="espacio-blanco-10px"></div>
+
+    <section>
+        <div class="alto-datos-solicitud onpContenedorSup">
+            <h4>
+                <strong>Periodo de Aportes Declarados</strong>
+            </h4>
+         </div>
+
+         <div class="espacio-blanco-10px"></div>
         
-    </div>
+         <div class="mensaje-alerta alert alert-danger onpContenedorSup" role="alert">
+            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-exclamation-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+            </svg>
+            Tiene que acreditar el Periodo de Aportes Declarados
+          </div>
+
+          <ul  class="nav nav-tabs" id="myTab" role="tablist">
+            <li  class="nav-item" role="presentation">
+              <a style="background: #f7f7f0;" class="nav-link active" id="periodo-obligatorio-tab" data-toggle="tab" href="#tabPeriodoObligatorio" role="tab" aria-controls="tabPeriodoObligatorio" aria-selected="true">Periodos Obligatorios</a>
+            </li>
+          </ul>
+          <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="tabPeriodoObligatorio" role="tabpanel" aria-labelledby="periodo-obligatorio-tab">
+                <div class="tab-periodo-obligatorio" style=" height: 30px;"></div>
+                <table  class="table">
+                    <thead class="thead-light">
+                      <tr>
+                        <th scope="col">Tipo de Documento</th>
+                        <th scope="col">Razón Social</th>
+                        <th scope="col">Inicio de Periodo Laboral</th>
+                        <th scope="col">Fin de Periodo Laboral</th>
+                        <th scope="col">Condición</th>
+                        <th scope="col">¿Acreditado?</th>
+                        <th scope="col">Acreditar</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>
+                            <a class="table__subrayado-acreditar" href="#">Acreditar</a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  
+                  <div class="tab-periodo-obligatorio" style="height: 30px;"></div>
+            </div>
+          </div>
+
+    </section>
+
+    <div class="espacio-blanco-20px"></div>
+
+    <section style="background: #EDF0F6; height: 50px;">
+        <div class="contenedor-botones d-flex justify-content-center">
+            <button type="button" style="margin-top: 10px;" class="btn btn-info" data-toggle="modal" data-target="#modalPosponerTarea" > POSPONER TAREA </button>   
+            <button type="button" style="background: #3F629C; margin-top: 10px;" class="btn btn-primary">Siguiente</button>   
+        </div>
+    </section>
+
+    <!--Modal-->
+    <div class="modal fade" id="modalPosponerTarea" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+          <div class="modal-content">
+            <div class="modal-header">
+              <p class="modal-title" id="exampleModalLabel">Documentos Idóneos</p>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <i style="color: white;" class="fas fa-window-close"></i>
+              </button>
+            </div>
+            <div>
+              
+                <section  [style.width]="100+'%'">
+                    <div class="collapse show" >
+                        <div class="card card-body">
+                            <div >
+                                <div [style.width]="100+'%'">
+                                    <table class="onpDatosDerTabla2" width="100%">
+                                        <tbody>
+                                            <tr width="100%">
+                                                <th width="15%">Empleador:</th>
+                                                <td width="35%">DNI</td>
+                                                <th width="15%">Tipo de Documento:</th>
+                                                <td width="35%">01234567</td>
+                                            </tr>
+                                            <tr width="100%">
+                                                <th width="15%">Tipo de Planilla:</th>
+                                                <td width="35%">DNI</td>
+                                                <th width="15%">Tipo de empresa:</th>
+                                                <td width="35%">DNI</td>
+                                            </tr>
+                                            <p style="font-size: 13px;">Periodo Laboral:</p>
+                                            <tr width="100%">
+                                                <th width="15%">Inicio Periodo:</th>
+                                                <td width="35%">31/12/1994</td>
+                                                <th width="15%">Fin de Periodo:</th>
+                                                <td width="35%">31/12/2019</td>
+                                            </tr>
+                                            <tr width="100%">
+                                                <th width="15%">Sector Ccupacional:</th>
+                                                <td width="35%">OFICIOS O PROFESIONES</td>
+                                                <th width="15%">Ocupación:</th>
+                                                <td width="35%">EMPLEADO</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <div class="espacio-blanco-20px"></div>
+
+                                <div class="row">
+                                    <div class="col-2">
+                                      <div class="nav flex-column nav-pills"  role="tablist" aria-orientation="vertical">
+                                        <a style="background: #17448E; margin-right: -15px; font-size: 10px;" class="nav-link active" id="certificado-trabajo-tab" data-toggle="pill" href="#tab-certificado-trabajo" role="tab" aria-controls="tab-certificado-trabajo" aria-selected="true">CERTIFICADO DE TRABAJO</a>
+                                        
+                                      </div>
+                                    </div>
+                                    <div style="border: 1px solid #b5a4a2;" class="col-10">
+                                      <div class="tab-content" >
+                                        <div class="tab-pane fade show active" id="tab-certificado-trabajo" role="tabpanel" aria-labelledby="certificado-trabajo-tab">
+                                            <div class="espacio-blanco-20px"></div>
+                                            <table class="onpDatosDerTabla2" width="100%">
+                                                <tbody>
+                                                    <tr width="100%">
+                                                        <th width="15%">Cantidad:</th>
+                                                        <td width="35%">1</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <div class="espacio-blanco-10px"></div>
+                                            <table  class="table">
+                                                <thead class="thead-light">
+                                                  <tr>
+                                                    <th scope="col">Inicio de Periodo Laboral</th>
+                                                    <th scope="col">Fin de Periodo Laboral</th>
+                                                    <th scope="col">Formato de Presentación</th>
+                                                    <th scope="col">¿Acreditado?</th>
+                                                    <th scope="col">Motivo</th>
+                                                    <th scope="col">Acreditar Documento</th>
+                                                  </tr>
+                                                </thead>
+                                                <tbody>
+                                                  <tr>
+                                                    <th scope="row">1</th>
+                                                    <td>Mark</td>
+                                                    <td>Otto</td>
+                                                    <td>@mdo</td>
+                                                    <td>Mark</td>
+                                                    <td>
+                                                        <button type="button" style="font-size: 10px; background: white; color: blue; text-decoration: underline; border: 0px;" class="btn btn-primary" data-toggle="modal" data-target="#modalAcreditarDocumento">
+                                                            Acreditar Documento
+                                                        </button>
+                                                    </td>
+                                                  </tr>
+                                                </tbody>
+                                              </table>
+
+
+                                        </div>
+                                        <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">...</div>
+                                        <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">...</div>
+                                        <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>
+                                      </div>
+                                    </div>
+                                  </div>
+                            </div>
+            
+            
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" style="background: #3F629C;" data-dismiss="modal" class="btn btn-primary">Aceptar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+   
+
+      <div id="modalAcreditarDocumento" class="modal fade " data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <p class="modal-title" id="staticBackdropLabel">Modal title</p>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span style="color: white;" aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="espacio-blanco-20px"></div>
+              <p>¿Acreditado?</p> 
+              <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="rAcreditado" name="rAcreditado" class="custom-control-input">
+                <label class="custom-control-label" for="rAcreditado">ACREDITADO</label>
+              </div>
+              <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="rAcreditadoDf" name="rAcreditadoDf" class="custom-control-input">
+                <label class="custom-control-label" for="rAcreditadoDf">ACREDITADO-DF</label>
+              </div>
+              <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="rNoAcreditado" name="rNoAcreditado" class="custom-control-input">
+                <label class="custom-control-label" for="rNoAcreditado">NO ACREDITADO</label>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Understood</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
  </div>
 </div>

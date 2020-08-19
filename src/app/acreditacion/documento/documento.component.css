@@ -1,5 +1,10 @@
+/* Clases para el componenete */
 .espacio-blanco-10px{
     height: 10px;
+}
+
+.espacio-blanco-20px{
+    height: 20px;
 }
 
 .cabecera-card{
@@ -10,5 +15,64 @@
 
 .cabecera-card__item2{
     justify-content: center;
+}
+
+.color-flecha{
+    color: #17448e;
+    
+}
+
+.tamanio-flecha{
+    font-size: 25px;
+}
+
+.alto-datos-solicitud{
+    height: 42px;
+}
+
+.boton-datos-solicitud{
+    background:#17448e;
+    border: #fff;
+}
+
+.mensaje-alerta{
+    font-weight: bold;
+    font-family: TitilliumWeb-SemiBold, sans-serif;
+}
+
+.table__subrayado-acreditar{
+    text-decoration: underline;
+}
+
+.tab-periodo-obligatorio{
+    background: #f7f7f0;
+}
+
+.test{
+    border-radius: 6px 6px 6px 6px;
+    -moz-border-radius: 6px 6px 6px 6px;
+    -webkit-border-radius: 6px 6px 6px 6px;
+    background: #F2F5F9;
+    border: 1px solid #D5DDEB;
+    color: #2328FF;
+    font-weight: bold;
+}
+
+.contenedor-botones{
+    display: grid;
+    column-gap: 5px;
+}
+
+/* Clases de bootstrap */
+.btn-primary:focus{
+    box-shadow: none;
+}
+
+.modal-header{
+    padding: 5px;
+    font-family: TitilliumWeb-SemiBold, sans-serif;
+    background: #17448E;
+    color: #FFF;
+    font-size: 13px;
 }
 
