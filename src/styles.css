@@ -679,4 +679,60 @@
     font-style: normal;
 }
 
+.espacio-blanco-10px{
+    height: 10px;
+}
+
+.color-flecha{
+    color: #17448e;
+    
+}
+
+.tamanio-flecha{
+    font-size: 25px;
+}
+
+.contenedor-botones{
+    display: grid;
+    column-gap: 5px;
+}
+
+.espacio-blanco-20px{
+    height: 20px;
+}
+
+.cabecera-card{
+    display: grid;
+    grid-template-columns: 98% 2%;
+    height: 42px;
+}
+
+.alto-datos-solicitud{
+    height: 42px;
+}
+
+.cabecera-card__item2{
+    justify-content: center;
+}
+
+.mensaje-alerta{
+    font-weight: bold;
+    font-family: TitilliumWeb-SemiBold, sans-serif;
+}
+
+/* Clases de bootstrap */
+.modal-header{
+    padding: 5px;
+    font-family: TitilliumWeb-SemiBold, sans-serif;
+    background: #17448E;
+    color: #FFF;
+    font-size: 13px;
+}
+
+.btn-primary:focus{
+    box-shadow: none;
+}
+
+
+
 

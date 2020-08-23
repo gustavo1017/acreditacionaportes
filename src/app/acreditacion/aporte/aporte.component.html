@@ -1,1 +1,128 @@
-<p>aporte works!</p>
+<div id="pasos" class="onpPasos onpMargenSup45">
+    <div class="onpPasosItem">
+        <div class="onpPasosNum" id="paso1">1</div>
+        <div class="onpPasosTit">Acreditación de Documentos</div>
+    </div>
+    <div class="onpPasosItem onpPasosActivo">
+        <div class="onpPasosNum" id="paso2">2</div>
+        <div class="onpPasosTit">Acreditación de Aportes</div>
+    </div>
+    <div class="onpPasosItem">
+        <div class="onpPasosNum" id="paso3">3</div>
+        <div class="onpPasosTit">Resumen</div>
+    </div>
+</div>
+
+<section class="onpContenedorSup" [style.width]="100+'%'">
+
+    <div class="cabecera-card">
+        <div class="cabecera-card__item1">
+            <h4 class="onpMargenSup15 onpMargenIzq20">
+                <strong>Datos de Afiliado</strong>
+            </h4>
+        </div>
+        <div class="cabecera-card__item2">
+            <a (click)="mostrarDatosAfiliado()" data-toggle="collapse" href="#contenedorDatosAfiliado" role="button" aria-expanded="true" aria-controls="contenedorDatosAfiliado">
+                <i class="tamanio-flecha color-flecha {{iconoFlechaMostrarDatosAfiliado}}"></i>
+            </a>
+        </div>
+    </div>
+
+    <div class="collapse show" id="contenedorDatosAfiliado">
+        <div class="card card-body">
+            <div >
+                <div [style.width]="100+'%'">
+                    <table class="onpDatosDerTabla2" width="100%">
+                        <tbody>
+                            <tr width="100%">
+                                <th width="15%">Tipo de Documento:</th>
+                                <td width="35%">DNI</td>
+                                <th width="15%">Nombres y Apellidos:</th>
+                                <td width="35%">01234567</td>
+                            </tr>
+                            <tr>
+                                <th>Nro de documento:</th>
+                                <td>LUIS EDUARDO SULLON CHERO</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</section>
+
+<div class="espacio-blanco-10px"></div>
+
+<section>
+    <div class="alto-datos-solicitud onpContenedorSup">
+        <h4>
+            <strong>Periodo de Aportes Declarados</strong>
+        </h4>
+     </div>
+
+<div class="espacio-blanco-10px"></div>
+        
+     <div class="mensaje-alerta alert alert-danger onpContenedorSup" role="alert">
+        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-exclamation-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+             <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+        </svg>
+        No existen aportes para acreditar.
+     </div>
+
+     <div class="contenedor-botones d-flex justify-content-end">
+        <button data-toggle="modal" data-target="#modalCuadroResumen" type="button" style="background: #3F629C; margin-top: 10px;" class="btn btn-primary">CUADRO RESUMEN DE APORTES AL SNP</button>   
+    </div>
+</section>
+
+<div class="espacio-blanco-20px"></div>
+
+<section style="background: #EDF0F6; height: 50px;">
+    <div class="contenedor-botones d-flex justify-content-center">
+        <button type="button" style="margin-top: 10px;" class="btn btn-info" > POSPONER TAREA </button>   
+        <button data-toggle="modal" data-target="#confirmarAcreditarAporte" type="button" style="background: #3F629C; margin-top: 10px;" class="btn btn-primary">Siguiente</button>   
+    </div>
+</section>
+
+<!--Modal-->
+<div id="modalCuadroResumen" class="modal fade " data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <p class="modal-title" id="staticBackdropLabel">Cuadro Resumén de Aportes</p>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span style="color: white;" aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+
+            <ngx-extended-pdf-viewer  [zoom]="100" [src]="url" [textLayer]="true" useBrowserLocale="true" height="600px"></ngx-extended-pdf-viewer>
+        </div>
+        <div class="modal-footer d-flex justify-content-start">
+          <button type="button" class="btn btn-info" data-dismiss="modal">REGRESAR</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="confirmarAcreditarAporte" class="modal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <p class="modal-title">Mensaje de Confirmación</p>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span  style="color: white;" aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <p style="font-size: 13px;">Valide los aportes acreditados hasta el momento, luego de ir al Paso 3 no podra retornar.¿Desea continuar?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" style="font-size: 10px;" class="btn btn-info" data-dismiss="modal">NO</button>
+          <button [routerLink]="['/resumen']" data-dismiss="modal" type="button" style="background: #3F629C; font-size:10px" class="btn btn-primary">SI</button>
+        </div>
+      </div>
+    </div>
+  </div>

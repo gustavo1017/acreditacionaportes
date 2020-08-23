@@ -1,4 +1,17 @@
-<app-navegacion></app-navegacion>
+<div id="pasos" class="onpPasos onpMargenSup45">
+    <div class="onpPasosItem onpPasosActivo">
+        <div class="onpPasosNum" id="paso1">1</div>
+        <div class="onpPasosTit">Acreditación de Documentos</div>
+    </div>
+    <div class="onpPasosItem">
+        <div class="onpPasosNum" id="paso2">2</div>
+        <div class="onpPasosTit">Acreditación de Aportes</div>
+    </div>
+    <div class="onpPasosItem">
+        <div class="onpPasosNum" id="paso3">3</div>
+        <div class="onpPasosTit">Resumen</div>
+    </div>
+</div>
 
 <div class="cabecera-card">
     <div></div>
@@ -197,7 +210,9 @@
                         <td>Mark</td>
                         <td>Otto</td>
                         <td>
-                            <a class="table__subrayado-acreditar" href="#">Acreditar</a>
+                            <button data-toggle="modal" data-target="#modalPosponerTarea" type="button" style="font-size: 10px; background: white; color: blue; text-decoration: underline; border: 0px;" class="btn btn-primary">
+                                Acreditar
+                            </button>
                         </td>
                       </tr>
                     </tbody>
@@ -213,8 +228,8 @@
 
     <section style="background: #EDF0F6; height: 50px;">
         <div class="contenedor-botones d-flex justify-content-center">
-            <button type="button" style="margin-top: 10px;" class="btn btn-info" data-toggle="modal" data-target="#modalPosponerTarea" > POSPONER TAREA </button>   
-            <button type="button" style="background: #3F629C; margin-top: 10px;" class="btn btn-primary">Siguiente</button>   
+            <button type="button" style="margin-top: 10px;" class="btn btn-info" > POSPONER TAREA </button>   
+            <button [routerLink]="['/aporte']" type="button" style="background: #3F629C; margin-top: 10px;" class="btn btn-primary">Siguiente</button>   
         </div>
     </section>
 
@@ -307,7 +322,7 @@
                                                     <td>@mdo</td>
                                                     <td>Mark</td>
                                                     <td>
-                                                        <button type="button" style="font-size: 10px; background: white; color: blue; text-decoration: underline; border: 0px;" class="btn btn-primary" data-toggle="modal" data-target="#modalAcreditarDocumento">
+                                                        <button  type="button" style="font-size: 10px; background: white; color: blue; text-decoration: underline; border: 0px;" class="btn btn-primary" data-toggle="modal" data-target="#modalAcreditarDocumento">
                                                             Acreditar Documento
                                                         </button>
                                                     </td>
@@ -344,30 +359,47 @@
         <div class="modal-dialog modal-lg">
           <div class="modal-content">
             <div class="modal-header">
-              <p class="modal-title" id="staticBackdropLabel">Modal title</p>
+              <p class="modal-title" id="staticBackdropLabel">Acreditación de Aportes</p>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span style="color: white;" aria-hidden="true">&times;</span>
               </button>
             </div>
             <div class="modal-body">
+
               <div class="espacio-blanco-20px"></div>
+              
               <p>¿Acreditado?</p> 
               <div class="custom-control custom-radio custom-control-inline">
                 <input type="radio" id="rAcreditado" name="rAcreditado" class="custom-control-input">
                 <label class="custom-control-label" for="rAcreditado">ACREDITADO</label>
               </div>
               <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" id="rAcreditadoDf" name="rAcreditadoDf" class="custom-control-input">
+                <input type="radio" id="rAcreditadoDf" name="rAcreditado" class="custom-control-input">
                 <label class="custom-control-label" for="rAcreditadoDf">ACREDITADO-DF</label>
               </div>
               <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" id="rNoAcreditado" name="rNoAcreditado" class="custom-control-input">
+                <input type="radio" id="rNoAcreditado" name="rAcreditado" class="custom-control-input">
                 <label class="custom-control-label" for="rNoAcreditado">NO ACREDITADO</label>
               </div>
+
+              <div class="espacio-blanco-20px"></div>
+
+              <p>Motivo:</p>
+
+              <select style="width: 764px;" name="motivo" id="motivo">
+                <option value="motivo1">Mortivo1</option>
+                <option value="motivo2">Motivo2</option>
+                <option value="motivo3">Motivo3</option>
+                <option value="motivo4">Motivo4</option>
+              </select>
+
+              <div class="espacio-blanco-20px"></div>
+
+              <ngx-extended-pdf-viewer  [zoom]="100" [src]="url" [textLayer]="true" useBrowserLocale="true" height="600px"></ngx-extended-pdf-viewer>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Understood</button>
+              <button type="button" class="btn btn-info" data-dismiss="modal">CANCELAR</button>
+              <button type="button" style="background: #3F629C;" class="btn btn-primary">ACEPTAR</button>
             </div>
           </div>
         </div>

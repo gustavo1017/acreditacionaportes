@@ -1,0 +1,116 @@
+<div id="pasos" class="onpPasos onpMargenSup45">
+    <div class="onpPasosItem">
+        <div class="onpPasosNum" id="paso1">1</div>
+        <div class="onpPasosTit">Acreditación de Documentos</div>
+    </div>
+    <div class="onpPasosItem">
+        <div class="onpPasosNum" id="paso2">2</div>
+        <div class="onpPasosTit">Acreditación de Aportes</div>
+    </div>
+    <div class="onpPasosItem onpPasosActivo">
+        <div class="onpPasosNum" id="paso3">3</div>
+        <div class="onpPasosTit">Resumen</div>
+    </div>
+</div>
+
+<section class="onpContenedorSup" [style.width]="100+'%'">
+
+    <div class="cabecera-card">
+        <div class="cabecera-card__item1">
+            <h4 class="onpMargenSup15 onpMargenIzq20">
+                <strong>Datos de Afiliado</strong>
+            </h4>
+        </div>
+        <div class="cabecera-card__item2">
+            <a (click)="mostrarDatosAfiliado()" data-toggle="collapse" href="#contenedorDatosAfiliado" role="button" aria-expanded="true" aria-controls="contenedorDatosAfiliado">
+                <i class="tamanio-flecha color-flecha {{iconoFlechaMostrarDatosAfiliado}}"></i>
+            </a>
+        </div>
+    </div>
+
+    <div class="collapse show" id="contenedorDatosAfiliado">
+        <div class="card card-body">
+            <div >
+                <div [style.width]="100+'%'">
+                    <table class="onpDatosDerTabla2" width="100%">
+                        <tbody>
+                            <tr width="100%">
+                                <th width="15%">Tipo de Documento:</th>
+                                <td width="35%">DNI</td>
+                                <th width="15%">Nombres y Apellidos:</th>
+                                <td width="35%">01234567</td>
+                            </tr>
+                            <tr>
+                                <th>Nro de documento:</th>
+                                <td>LUIS EDUARDO SULLON CHERO</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</section>
+
+<div class="espacio-blanco-10px"></div>
+
+<section class="onpContenedorSup" [style.width]="100+'%'">
+
+    <div class="cabecera-card">
+        <div class="cabecera-card__item1">
+            <h4 class="onpMargenSup15 onpMargenIzq20">
+                <strong>Resumen de Acreditación de Aportes</strong>
+            </h4>
+        </div>
+        <div class="cabecera-card__item2">
+            <a (click)="mostrarResumenAcreditacion()" data-toggle="collapse" href="#contenedorResumenAcreditacion" role="button" aria-expanded="true" aria-controls="contenedorDatosAfiliado">
+                <i class="tamanio-flecha color-flecha {{iconoFlechaMostrarResumenAcreditacion}}"></i>
+            </a>
+        </div>
+    </div>
+
+    <div class="collapse show" id="contenedorResumenAcreditacion">
+        <div class="card card-body">
+            <div >
+                <div [style.width]="100+'%'">
+                    <table class="onpDatosDerTabla2" width="100%">
+                        <tbody>
+                            <tr width="100%">
+                                <th width="15%">Periodos de Aportes Acreditados:</th>
+                                <td width="35%">25 años- 1 dias</td>
+                                <th width="15%">Periodos de Aportes No Acreditados:</th>
+                                <td width="35%">0 dias</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</section>
+
+<section class="onpContenedorSup" [style.width]="100+'%'">
+    <div style="padding-top: 30px; padding-bottom: 30px; padding-left: 15px;">
+        <div class="d-flex justify-content-start">
+            <i style="padding-right: 5px;" class="far fa-file-alt"></i> <p style="font-size: 12px;">Cantidad de Aportes Acreditados: 301</p> 
+        </div>
+        <div class="d-flex justify-content-start">
+            <i style="padding-right: 5px;" class="far fa-file-alt"></i> <p style="font-size: 12px;">Cantidad de Aportes NO Acreditados: 0</p> 
+        </div>
+        <div class="d-flex justify-content-start">
+            <i style="padding-right: 5px;" class="far fa-file-alt"></i> <p style="font-size: 12px;">Cantidad de Aportes Pendientes de Acreditacioón: 0</p> 
+        </div>
+    </div>
+</section>
+
+<div class="espacio-blanco-20px"></div>
+
+<section style="background: #EDF0F6; height: 50px;">
+    <div class="contenedor-botones d-flex justify-content-center">
+        <button  type="button" style="background: #3F629C; margin-top: 10px;" class="btn btn-primary">FINALIZAR TAREA</button>   
+    </div>
+</section>

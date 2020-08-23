@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CatalogoService } from '../../services/catalogo.service';
+import { Elemento } from 'src/app/model/elemento.model';
 
 @Component({
   selector: 'app-documento',
@@ -6,16 +8,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./documento.component.css']
 })
 export class DocumentoComponent implements OnInit {
- 
+  public url = '';
+  public pdfSrc = "https://vadimdez.github.io/ng2-pdf-viewer/assets/pdf-test.pdf";
   public iconoFlechaMostrarMotivoTramite: String;
   public iconoFlechaMostrarDatosSolicitud: String;
   public iconoFlechaMostrarDatosAfiliado: String;
+  public elementos: Elemento[];
   
-  constructor() {
-
+  constructor(private catalogoService: CatalogoService) {
+    this.url = 'assets/imagen/test.pdf';
     this.iconoFlechaMostrarMotivoTramite = "fas fa-angle-up"
     this.iconoFlechaMostrarDatosSolicitud = "fas fa-angle-up"
     this.iconoFlechaMostrarDatosAfiliado = "fas fa-angle-up"
+    this.elementos = [];
    }
 
   ngOnInit(): void {
@@ -43,6 +48,12 @@ export class DocumentoComponent implements OnInit {
     }else{
       this.iconoFlechaMostrarDatosAfiliado = "fas fa-angle-down"
     }
+  }
+
+  obtenerCatalogo(){
+    this.catalogoService.obtenerCatalogo().subscribe( elementos => {
+      this.elementos = elementos;
+    });
   }
 
 }
