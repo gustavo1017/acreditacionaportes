@@ -9,10 +9,12 @@ export class ResumenComponent implements OnInit {
   public iconoFlechaMostrarDatosAfiliado: String;
   public iconoFlechaMostrarResumenAcreditacion: String;
   public url = '';
+  onpPasosActivo: string;
   constructor() {
     this.url = 'assets/imagen/test.pdf';
     this.iconoFlechaMostrarDatosAfiliado = "fas fa-angle-up"
     this.iconoFlechaMostrarResumenAcreditacion = "fas fa-angle-up"
+    this.onpPasosActivo = 'onpPasosActivo';
    }
 
   ngOnInit(): void {

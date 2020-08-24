@@ -1,6 +1,6 @@
-import { DocumentoIdentidad } from "./documentoidentidad.model";
-import { LugarNacimiento } from "./lugarnacimiento.model"
-import { LugarNacionalidad } from "./lugarnacionalidad.model";
+import { DocumentoIdentidad } from "./documento-identidad.model";
+import { LugarNacimiento } from "./lugar-nacimiento.model"
+import { LugarNacionalidad } from "./lugar-nacionalidad.model";
 export interface PersonaDetalle{
     idPersona: number,
     codTipoSolicitante: string,

@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { DocumentoComponent } from './acreditacion/documento/documento.component';
-import { AporteComponent } from './acreditacion/aporte/aporte.component';
-import { ResumenComponent } from './acreditacion/resumen/resumen.component';
+import { DocumentoComponent } from './components/acreditacion/documento/documento.component';
+import { AporteComponent } from './components/acreditacion/aporte/aporte.component';
+import { ResumenComponent } from './components/acreditacion/resumen/resumen.component';
 
 
 const routes: Routes = [

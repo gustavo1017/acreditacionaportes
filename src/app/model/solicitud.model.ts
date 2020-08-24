@@ -1,4 +1,4 @@
-import { TiempoTramitacion } from "./tiempotramitacion.model";
+import { TiempoTramitacion } from "./tiempo-tramitacion.model";
 import { Motivo } from "./motivo.model"
 import { Persona } from "./persona.model";
 export interface Solicitud{

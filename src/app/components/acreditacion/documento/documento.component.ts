@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CatalogoService } from '../../services/catalogo.service';
+import { CatalogoService } from '../../../services/catalogo.service';
 import { Elemento } from 'src/app/model/elemento.model';
 
 @Component({
@@ -14,6 +14,7 @@ export class DocumentoComponent implements OnInit {
   public iconoFlechaMostrarDatosSolicitud: String;
   public iconoFlechaMostrarDatosAfiliado: String;
   public elementos: Elemento[];
+  onpPasosActivo: string;
   
   constructor(private catalogoService: CatalogoService) {
     this.url = 'assets/imagen/test.pdf';
@@ -21,6 +22,7 @@ export class DocumentoComponent implements OnInit {
     this.iconoFlechaMostrarDatosSolicitud = "fas fa-angle-up"
     this.iconoFlechaMostrarDatosAfiliado = "fas fa-angle-up"
     this.elementos = [];
+    this.onpPasosActivo = 'onpPasosActivo';
    }
 
   ngOnInit(): void {

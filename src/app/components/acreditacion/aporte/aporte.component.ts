@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 export class AporteComponent implements OnInit {
   public iconoFlechaMostrarDatosAfiliado: String;
   public url = '';
+  baseUrl: string;
+  onpPasosActivo: string;
   constructor() {
     this.url = 'assets/imagen/test.pdf';
     this.iconoFlechaMostrarDatosAfiliado = "fas fa-angle-up"
+    this.baseUrl = ''
+    this.onpPasosActivo = 'onpPasosActivo';
      }
 
   ngOnInit(): void {
